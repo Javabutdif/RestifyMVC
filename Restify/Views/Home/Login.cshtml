@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/site.css" />
+    </head>
+
+    <body>
+        <form method="post">
+        <div class="text-white rounded-4" style="text-align:center; padding-bottom:10%; background-color:#BCA9E9; margin-left:35%; margin-right:35%; border-radius: 25px 25px 25px 25px">
+        <br />
+        <img src="/images/restifywbg.jpg" class="col-3 bg-white" style="border-radius: 25% 25% 25% 25%; " />
+        <br />
+        <br>
+        <h1>Login</h1>
+        <br />
+
+
+        <input name="email" type="email" class="rounded-3 w-75 h-75 border-0 shadow justify-content-center" placeholder="Email"/>
+        <br />
+        <br />
+
+        <input name="pass" type="password" class="rounded-3 w-75 h-75 border-0 shadow justify-content-center" placeholder="Password"/>
+
+        <br />
+        <br />
+        <br />
+
+        <a asp-action="LoginButton" asp-controller="Home"  class="btn btn-dark shadow justify-content-center">Login</a>
+        <br />
+        <br />
+        <p>No account? Click <a style="color:#56327E" asp-action="Register" asp-controller="Home">Here</a></p>
+
+    </div>
+    </form>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/site.css" />
+    </head>
+    <body>
+        <form method="post" asp-action="RegisterForm" asp-controller="Home">
+        <div class="text-white rounded-4 " style="text-align:center; padding-bottom:5%; background-color:#56327E; margin-left:35%; margin-right:35%; border-radius: 25px 25px 25px 25px">
+            <br />
+            <a asp-action="Login" asp-controller="Home" class="btn btn-danger" style="text-align:left; margin-right:76%;">Back</a>
+            <br />
+
+            <img src="/images/restifynobg.png" class="col-3 bg-white" style="border-radius: 25% 25% 25% 25%; " />
+        
+            <h1 style="padding-top:2%">Register</h1>
+            <br />
+
+            <div class="container justify-content-evenly text-wrap">
+
+
+                <input type="text" name="fname" class="rounded-3 w-75 border-0 shadow" placeholder="First Name" required/>
+                <br />
+                <br />
+
+                <input type="text" name="lname" class="rounded-3 w-75 border-0 shadow" placeholder="Last Name" required />
+                <br />
+                <br />
+
+                <input type="email" name="email" class="rounded-3 w-75 border-0 shadow" placeholder="Email" required />
+                <br />
+                <br />
+
+                <input type="text" name="contact" class="rounded-3 w-75 border-0 shadow" placeholder="Contact Number" required />
+                <br />
+                <br />
+
+                <input type="password" name="pass" class="rounded-3 w-75 border-0 shadow" placeholder="Password" required />
+                <br />
+                <br />
+
+                <input type="password" name="con" class="rounded-3 w-75 border-0 shadow" placeholder="Confirm Password" required />
+            </div>
+            <br />
+
+
+
+            <br />
+            <br />
+            <button type="submit" class="btn  btn-success" >Submit</button>
+            <br />
+            <br />
+
+
+        </div>
+        </form>
+    </body>
+</html>
