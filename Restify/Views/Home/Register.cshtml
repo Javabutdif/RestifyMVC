@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="/css/site.css" />
     </head>
     <body>
-        <form method="post" asp-action="RegisterForm" asp-controller="Home">
+      
         <div class="text-white rounded-4 " style="text-align:center; padding-bottom:5%; background-color:#56327E; margin-left:35%; margin-right:35%; border-radius: 25px 25px 25px 25px">
             <br />
             <a asp-action="Login" asp-controller="Home" class="btn btn-danger" style="text-align:left; margin-right:76%;">Back</a>
@@ -18,11 +18,11 @@
         
             <h1 style="padding-top:2%">Register</h1>
             <br />
-
+            <form asp-action="RegisterContact" asp-controller="Home" method="POST">
             <div class="container justify-content-evenly text-wrap">
 
-
-                <input type="text" name="fname" class="rounded-3 w-75 border-0 shadow" placeholder="First Name" required/>
+        
+                <input asp type="text" name="fname" class="rounded-3 w-75 border-0 shadow" placeholder="First Name" required/>
                 <br />
                 <br />
 
@@ -43,7 +43,9 @@
                 <br />
 
                 <input type="password" name="con" class="rounded-3 w-75 border-0 shadow" placeholder="Confirm Password" required />
+             
             </div>
+  
             <br />
 
 
@@ -53,9 +55,10 @@
             <button type="submit" class="btn  btn-success" >Submit</button>
             <br />
             <br />
+            </form>
 
 
         </div>
-        </form>
+ 
     </body>
 </html>

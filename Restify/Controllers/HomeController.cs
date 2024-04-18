@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Restify.Data;
 using Restify.Models;
 using System.Diagnostics;
 
@@ -8,11 +9,14 @@ namespace Restify.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+     
+        private readonly ApplicationDbContext _db;
+
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -30,21 +34,25 @@ namespace Restify.Controllers
         {
             return View();
         }
+        public IActionResult RegisterContact(string fname, string lname, string email, string contact, string pass)
+        {
+            Landlord land = new Landlord { landlord_first_name = fname, landlord_last_name = lname, landlord_email = email, landlord_contact = contact, landlord_password = pass };
+            _db.landlords.Add(land);
+            _db.SaveChanges();
+
+            // Redirect to login and display a notification
+            TempData["RegistrationSuccess"] = "Account registered successfully. Please log in.";
+            return RedirectToAction("Login");
+
+
+        }
         public IActionResult Register()
         {
             return View();
         }
 
-        /*
-        public IActionResult RegisterForm(string fname, string lname, string email, string contact, string pass, string con)
-        {
-            if(!pass.Equals(con))
-            {
-               
-                
-            }
-        }
-        */
+  
+      
 
 
 
