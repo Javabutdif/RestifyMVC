@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Restify.Data;
 using Restify.Models;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Data.SqlClient;
 
 namespace Restify.Controllers
 {
@@ -34,25 +36,88 @@ namespace Restify.Controllers
         {
             return View();
         }
-        public IActionResult RegisterContact(string fname, string lname, string email, string contact, string pass)
-        {
-            Landlord land = new Landlord { landlord_first_name = fname, landlord_last_name = lname, landlord_email = email, landlord_contact = contact, landlord_password = pass };
-            _db.landlords.Add(land);
-            _db.SaveChanges();
+     
 
-            // Redirect to login and display a notification
-            TempData["RegistrationSuccess"] = "Account registered successfully. Please log in.";
-            return RedirectToAction("Login");
+            public IActionResult RegisterContact(string fname, string lname, string email, string contact, string pass)
+            {
+                ConnectionString connectionString = new ConnectionString();
+               
 
+                
+                string sql = "INSERT INTO Landlord(landlord_first_name, landlord_last_name, landlord_email, landlord_contact, landlord_password) " +
+                             "VALUES(@fname, @lname, @email, @contact, @pass)";
 
-        }
-        public IActionResult Register()
+            
+                using (SqlConnection connection = new SqlConnection(connectionString.connection()))
+                {
+                  
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        
+                        command.Parameters.AddWithValue("@fname", fname);
+                        command.Parameters.AddWithValue("@lname", lname);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@contact", contact);
+                        command.Parameters.AddWithValue("@pass", pass);
+
+                        
+                        connection.Open();
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                      
+                        connection.Close();
+                    }
+                }
+
+                // Redirect to login and display a notification
+                TempData["RegistrationSuccess"] = "Account registered successfully. Please log in.";
+                return RedirectToAction("Login");
+            }
+
+    public IActionResult Register()
         {
             return View();
         }
+        public void LoginButton(string email, string pass)
+        {
+            ConnectionString connectionString = new ConnectionString();
 
-  
-      
+
+
+            string sql = "SELECT * FROM Landlord WHERE landlord_email = @email AND landlord_password = @pass";
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString.connection()))
+            {
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@pass", pass);
+
+                    connection.Open();
+
+                    // Execute the SELECT query and get the results
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            TempData["LoginSuccess"] = "Account login successfully.";
+                        }
+                        else
+                        {
+                            // Data not found, handle accordingly
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+        }
+
+
+
 
 
 

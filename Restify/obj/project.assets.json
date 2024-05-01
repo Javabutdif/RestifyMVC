@@ -3068,11 +3068,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\james\\OneDrive\\Desktop\\Restify\\Restify\\Restify.csproj",
+      "projectUniqueName": "C:\\Users\\james\\OneDrive\\Desktop\\RestifyMVC\\Restify\\Restify.csproj",
       "projectName": "Restify",
-      "projectPath": "C:\\Users\\james\\OneDrive\\Desktop\\Restify\\Restify\\Restify.csproj",
+      "projectPath": "C:\\Users\\james\\OneDrive\\Desktop\\RestifyMVC\\Restify\\Restify.csproj",
       "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\james\\OneDrive\\Desktop\\Restify\\Restify\\obj\\",
+      "outputPath": "C:\\Users\\james\\OneDrive\\Desktop\\RestifyMVC\\Restify\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

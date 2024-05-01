@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zO6/g/LQwTwvpyDrR7NY2c2B7EE/qpQoHNbHuZjev50k4+Mx7dbs+16Hsin8nE1MznVBuoX+GTTU6tUFnPkIjg==",
+  "dgSpecHash": "Dv3dkZ0Cmq6+jMFPHbi4bIHzdqzANhdiV9qqyyDcghW0nrpYeP56R+9A0c9OErAJItcIB7OcAHh/UNdHflPlWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\james\\OneDrive\\Desktop\\Restify\\Restify\\Restify.csproj",
+  "projectFilePath": "C:\\Users\\james\\OneDrive\\Desktop\\RestifyMVC\\Restify\\Restify.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\james\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\james\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
